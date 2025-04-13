@@ -1,0 +1,555 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f8ff;
+    color: #333;
+    line-height: 1.6;
+}
+/* 
+header {
+    background: linear-gradient(135deg, #0b306c, #01baef);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+} */
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 10;
+}
+
+.back-home-btn {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    background-color: #007BFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-home-btn:hover {
+    background-color: #0056b3;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.hero {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+
+.hero-visual {
+    background-color: black;
+    height: 100vh; /* cijeli ekran */
+    width: 100%;
+    overflow: hidden;
+    position: relative; /* više nije absolute */
+    z-index: 0;
+}
+
+
+.hero-visual-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.hero-image {
+    width: 100%;
+    height: auto;  /* Ovdje koristimo auto da bi se visina automatski prilagodila */
+    object-fit: contain;  /* Osigurava da se slika ne izreže */
+    display: block;
+    margin: 0 auto;
+    opacity: 0.8;  /* Postavlja prozirnost samo za sliku */
+}
+
+
+.logo {
+    position: absolute;
+    top: 20px; /* Udaljenost od vrha */
+    left: 20px; /* Udaljenost od lijevog ruba */
+    width: 150px; /* Prilagodi veličinu loga */
+    height: auto;
+    z-index: 10; /* Osiguraj da logo bude iznad videa */
+}
+
+.additional-sports-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.sport-button {
+    background-color: #b9d29f;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.sport-button:hover {
+    background-color: #a8cb82;
+}
+
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.text-overlay h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif; 
+    color: rgb(209, 226, 220);
+}
+
+.text-overlay p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-family: Palatino, URW Palladio L, serif;
+}
+
+
+.main-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.sport-description {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 25px;
+    width: 100%; /* Postavljanje širine kartice na 100% roditeljskog elementa */
+    max-width: 1200px; /* Maksimalna širina kartice */
+    margin: 0 auto; /* Centriranje kartice unutar roditeljskog elementa */
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column; /* Održava vertikalni raspored za sidebar */
+    gap: 30px; /* Razmak između naslova i kartica */
+    padding: 15px;
+}
+
+.authors-section {
+    display: flex;
+    flex-direction: row; /* Raspored kartica u horizontalnom smjeru */
+    gap: 20px; /* Razmak između kartica */
+    justify-content: flex-start; /* Poravnava kartice s lijeve strane */
+    width: 100%;
+}
+
+.authors-section-title {
+    font-size: 24px; /* Veći font za naslov */
+    font-weight: bold;
+    color: #0b4f6c;
+    text-align: left; /* Naslov poravnat s lijeve strane */
+    width: 100%; /* Da bi naslov zauzeo cijeli prostor */
+    margin-bottom: 20px; /* Razmak između naslova i kartica */
+}
+
+.author-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    text-align: center;
+    width: 180px; /* Širina svake kartice */
+    display: flex;
+    flex-direction: column; /* Slika je iznad imena */
+    align-items: center; /* Centriranje sadržaja u kartici */
+}
+
+.author-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 3px solid #01baef;
+    transition: transform 0.3s;
+}
+
+.author-img:hover {
+    transform: scale(1.05);
+}
+
+.author-name {
+    margin-top: 10px;
+    color: #0b4f6c;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.other-sports {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+}
+
+.other-sports h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #0b4f6c;
+}
+
+.other-sports ul {
+    list-style: none;
+}
+
+.other-sports li {
+    margin-bottom: 10px;
+}
+
+.other-sports a {
+    display: block;
+    padding: 10px;
+    background-color: #e6f7ff;
+    border-radius: 5px;
+    color: #0b4f6c;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.other-sports a:hover {
+    background-color: #01baef;
+    color: white;
+}
+
+.footer {
+    background-color: #5f6d50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer a {
+    color: #a0e4ff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+    justify-items: center;
+}
+
+.gallery-item {
+    width: 100%;
+    max-width: 220px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.clickable-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+.video-container, .audio-container {
+    margin: 30px 0;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #0b4f6c;
+}
+
+h2 {
+    margin: 25px 0 15px;
+    border-bottom: 2px solid #01baef;
+    padding-bottom: 5px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.author-info {
+    display: none;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    max-width: 500px;
+    width: 90%;
+}
+
+.author-info h3 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #01baef;
+    padding-bottom: 5px;
+}
+
+.author-info p {
+    margin-bottom: 10px;
+}
+
+.author-info a {
+    color: #01baef;
+    text-decoration: none;
+}
+
+.author-info a:hover {
+    text-decoration: underline;
+}
+
+.sport-involvement {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 25px;
+    margin-top: 40px;
+}
+
+.sport-involvement h2 {
+    text-align: center;
+}
+
+.involvement-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.involvement-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.involvement-card h3 {
+    margin-bottom: 10px;
+    color: #0b4f6c;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .involvement-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Gumb za početnu stranicu u gornjem desnom kutu */
+.additional-home-button {
+    position: fixed; /* Stavlja gumb u fiksnu poziciju, ne pomiče se pri skrolanju */
+    top: 20px; /* Udaljenost od vrha stranice */
+    right: 20px; /* Udaljenost od desne strane */
+    z-index: 10; /* Osiguraj da gumb bude iznad loga */
+}
+
+.home-button {
+    background-color: #b9d29f;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: #a8cb82;
+}
+
+/*dodatni sport - tekst*/
+/* Raspored slike i teksta */
+.text-with-image {
+    display: flex;
+    align-items: center; /* Vertikalno poravnanje slike i teksta */
+    margin-bottom: 20px;
+}
+
+.text-with-image img {
+    width: 450px; /* Prilagodite veličinu slike */
+    height: auto;
+    margin-right: 15px; /* Razmak između slike i teksta */
+}
+
+/* Kada želite da slika bude desno od teksta */
+.text-with-image.reverse {
+    flex-direction: row-reverse; /* Obrne smjer slika i tekst */
+}
+
+.text-with-image p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/*Stil za paragrafe i slike
+.sport-description {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+}*/
+
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #b9d29f;
+    color: #fff;
+    font-size: 32px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s ease;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none; /* Sprječava klikanje dok gumb nije vidljiv */
+}
+
+.scroll-to-top:hover {
+    background-color: #626f54;
+    transform: scale(1.1);
+}
+
+.scroll-to-top:active {
+    transform: scale(0.95);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    pointer-events: auto; /* Omogućava klikanje kad je gumb vidljiv */
+}
