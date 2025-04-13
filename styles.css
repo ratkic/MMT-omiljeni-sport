@@ -553,3 +553,169 @@ button:hover {
     opacity: 1;
     pointer-events: auto; /* Omogućava klikanje kad je gumb vidljiv */
 }
+
+
+
+/* === RESPONSIVE DESIGN DODACI === */
+
+
+/* Responzivni dizajn za manje ekrane */
+@media (max-width: 768px) {
+    /* Video container */
+    .video-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* Omogućava omjer 16:9 (standardni omjer za video) */
+        background-color: #000; /* Dodavanje pozadinske boje */
+        overflow: hidden;
+    }
+
+    /* Video unutar container-a */
+    .video-container iframe,
+    .video-container video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Pokriva cijeli prostor bez izobličenja */
+    }
+
+}
+
+
+@media (max-width: 992px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        
+    /* Hero sekcija */
+    .hero-visual {
+        background-color: black;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        z-index: 0;
+    }
+
+    .hero-visual-wrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    /* Logo u gornjem lijevom kutu */
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 150px;
+        height: auto;
+        z-index: 10;
+    }
+
+    /* Gumbi u gornjem desnom kutu */
+    .additional-sports-buttons {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+        z-index: 10;
+    }
+
+    /* Video */
+    .hero-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Tekst i naslov centrirani unutar hero sekcije */
+    .text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        z-index: 10;
+    }
+
+    .text-overlay h1 {
+        margin: 0;
+        font-size: 3rem;
+        font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+        color: rgb(209, 226, 220);
+    }
+
+    .text-overlay p {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        font-family: Palatino, URW Palladio L, serif;
+    }
+
+    .authors-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .author-card {
+        width: 80%;
+    }
+
+    .text-with-image {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-with-image.reverse {
+        flex-direction: column;
+    }
+
+    .text-with-image img {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 0 15px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .text-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .text-overlay p {
+        font-size: 1rem;
+    }
+
+    .sport-button,
+    .home-button,
+    .back-home-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .hero-visual {
+        height: 60vh;
+    }
+
+    .author-card {
+        width: 90%;
+    }
+
+    .involvement-cards {
+        grid-template-columns: 1fr;
+    }
+}
